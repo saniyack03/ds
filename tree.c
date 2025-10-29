@@ -128,13 +128,13 @@ void main(){
   else//two child
   { sucpar=t;
   suc=t->rchild;
-  while(suc->lchild !=0)//inoder succesor
+  while(suc->lchild !=0)//inorder succesor
   {
   sucpar=suc;
   suc=suc->lchild;
   }
   t->data = suc->data;
-  //dlete inorder successor
+  //delete inorder successor
   if(suc->data < sucpar->data)
    sucpar->lchild = suc->rchild;
   else 
