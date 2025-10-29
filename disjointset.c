@@ -1,20 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
-//structure to represent an objectof a set in linked representation
+//structure to represent an object of a set in linked representation
 struct node
 {
   int value;
   struct rep * repptr;   //pointer to header node of the list
   struct node * next;
  };
- //structure to represent heaer node of linked representation of set
+ //structure to represent header node of linked representation of set
  struct rep
  {
   struct node * head;
   struct node * tail;
  };
  
-//structure to store key & object nodr pointer
+//structure to store key & object node pointer
 struct nodaddr
 {
  int key;
