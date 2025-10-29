@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-struct node{
+struct node{    //Define a structure for a node in the BST
 int data;
 struct node *lchild,*rchild;
 };
