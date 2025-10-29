@@ -5,14 +5,14 @@ int data;
 struct node *lchild,*rchild;
 };
 void main(){
-
+//function declaration
  struct node * insert(struct node * ,int);
  struct node * search(struct node *,int);
  void inorder(struct node *);
  struct node * delete(struct node * ,int);
- struct node * root=0;
+ struct node * root=0;   //initially tree is empty
  int item,op;
- while(1){
+ while(1){           //initite loop for menu-driven program
  printf("\n1. insert\n 2.delete\n 3.search\n 4.display\n 5.exit\n");
  printf("enter your option: ");
  scanf("%d",&op);
@@ -33,14 +33,14 @@ void main(){
        else
        printf("\nfound");
         break;
- case 4:inorder(root);
+ case 4:inorder(root);       //display in inorder
        break;
        
   case 5:exit(0);
   }
   }
   }
-  //function to search
+  //function to search for an element in the BST
   struct node * search(struct node * root, int data)
   {
   while(root != 0 && root->data != data)
@@ -51,11 +51,11 @@ void main(){
       return root;
   }
   
-  //function to insert
+  //function to insert a new node into the BST
   struct node * insert(struct node * root,int data)
   {
   struct node *t,* par=0,* t1;
-  t=(struct node *) malloc(sizeof(struct node));
+  t=(struct node *) malloc(sizeof(struct node));  //create a new node
   t->data=data;
   t->lchild=t->rchild=0;//leaf
   if(root == 0)
@@ -80,7 +80,7 @@ void main(){
   } 
    return root;
  }
- //function to traverse inoreder
+ //function to traverse inorder
   void inorder(struct node * root)
   {
   if(root != 0)
@@ -90,7 +90,7 @@ void main(){
     inorder(root -> rchild);
   }
   }
-  //function to delete a node
+  //function to delete a node from the BST
   struct node * delete(struct node * root, int data)
   {
    struct node * t=root, *par=0, *suc, *sucpar;
@@ -106,9 +106,9 @@ void main(){
    printf("%d not found..",data);
    else
    {
-    if (t->lchild == 0 &&  t->rchild==0)//leaf node
+    if (t->lchild == 0 &&  t->rchild==0) //leaf node
      {
-     if(par==0)//only single node
+     if(par==0) //only single node
        root=0;
      else if(data<par->data)//leaf with parent
          par-> lchild=0;
@@ -117,7 +117,7 @@ void main(){
      }
     else if(t->lchild == 0 || t->rchild ==0)//one child
     {
-     if(par==0)//root is to be deleted
+     if(par==0) //root is to be deleted
       root=root->lchild==0?root->rchild:root->lchild;
      else if (data <par->data)
        par->lchild=t->lchild==0?t->rchild:t->lchild;
@@ -125,10 +125,10 @@ void main(){
         par->rchild=t->lchild==0?t->rchild:t->lchild;
        
   }
-  else//two child
+  else //two child
   { sucpar=t;
   suc=t->rchild;
-  while(suc->lchild !=0)//inorder succesor
+  while(suc->lchild !=0) //inorder succesor
   {
   sucpar=suc;
   suc=suc->lchild;
