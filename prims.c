@@ -4,7 +4,7 @@ void main() {
     int u, v, n, i, j, ne = 1;
     int visited[10] = {0}, min, mincost = 0, cost[10][10];
 
-    printf("\nEnter the number of nodes: ");
+    printf("\nEnter the number of nodes: "); 
     scanf("%d", &n);
 
     printf("\nEnter the adjacency matrix:\n");
