@@ -72,7 +72,7 @@ c[k]=a[i];
 i++;
 k++;
 }
-while(j<n2){
+while(j<n2){      //copying remaining elements from array b
 c[k]=b[j];
 j++;
 k++;
