@@ -7,14 +7,14 @@ void sortdata(int[],int);
 void printdata(int[],int);
 void mergedata(int[],int[],int[],int,int);
 printf("Number of elements in the first array[1-20]:");
-scanf("%d,",&n1);
-readdata(arr1,n1);
+scanf("%d,",&n1);   
+readdata(arr1,n1);   //input array 1
 printf("\n Number of elements in second array[1-20]:");
 scanf("%d,",&n2);
-readdata(arr2,n2);
+readdata(arr2,n2);   //input array 2
 sortdata(arr1,n1);
 sortdata(arr2,n2);
-mergedata(arr1,arr2,arr3,n1,n2);
+mergedata(arr1,arr2,arr3,n1,n2);   //merge array
 printf("\n sorted array1:");
 printdata(arr1,n1);
 printf("\n sorted array2:");
@@ -22,7 +22,7 @@ printdata(arr2,n2);
 printf("\n merged array:");
 printdata(arr3,n1+n2);
 }
-void readdata(int a[],int n)
+void readdata(int a[],int n)    //function to read an array
 {
 int i;
 printf("\n Enter %d numbers:",n);
@@ -32,14 +32,14 @@ for(i=0;i<n;i++)
 }
 return;
 }
-void printdata(int a[],int n)
+void printdata(int a[],int n)    //function for displaying contents of an array
 {
 int i;
 for(i=0;i<n;i++)
   printf("%d,",a[i]);
  return;
 }
-void sortdata(int a[],int n){
+void sortdata(int a[],int n){         //function to sort an array
 int i,j,temp;
 for(i=0;i<n-1;i++)
 for(j=i+1;j<n;j++)
@@ -51,11 +51,11 @@ if(a[i]>a[j])
 }
 return;
 }
-void mergedata(int a[],int b[],int c[],int n1,int n2)
+void mergedata(int a[],int b[],int c[],int n1,int n2)    //merging arrays,stored into third sorted array
 {
 int i,j,k;
 i=j=k=0;
-while(i<n1 && j<n2)
+while(i<n1 && j<n2)      //compare elements of both arrays and insert smaller into c[]
 if(a[i]<b[j])
 {
 c[k]=a[i];
@@ -67,7 +67,7 @@ c[k]=b[j];
 j++;
 k++;
 }
-while(i<n1){
+while(i<n1){     //copying remaining elements from array A
 c[k]=a[i];
 i++;
 k++;
